@@ -44,9 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\IOperationSystemHook.cs" />
+    <Compile Include="WindowsOS\ActiveWindowStateTracker.cs" />
+    <Compile Include="Common\WindowStateChangedEventArgs.cs" />
     <Compile Include="ForegroundTracker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trackers\IWindowStateTracker.cs" />
+    <Compile Include="WindowsOS\WidowsEventHook.cs" />
+    <Compile Include="WindowsOS\WinApiEvents.cs" />
+    <Compile Include="WindowsOS\WinApiWrapper.cs" />
+    <Compile Include="WindowsOS\Window.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -20,6 +20,8 @@
 
         private uint TrackedProcessId { get; set; }
 
+        private WinApiWrapper.WinApiCallbackSignature Callback { get; set; }
+
         #endregion
 
         #region Constructos
@@ -28,9 +30,10 @@
         {
             this.TrackedEvent = trackedEvent;
             this.TrackedProcessId = processId;
+            this.Callback = this.HookBody;
 
             uint eventCode = (uint) this.TrackedEvent;
-            this.HookIdentifier = WinApiWrapper.SetWinEventHook(eventCode, eventCode, IntPtr.Zero, this.HookBody,
+            this.HookIdentifier = WinApiWrapper.SetWinEventHook(eventCode, eventCode, IntPtr.Zero, this.Callback,
                 this.TrackedProcessId, 0, WidowsEventHook.WinEventOutOfContext);
         }
 

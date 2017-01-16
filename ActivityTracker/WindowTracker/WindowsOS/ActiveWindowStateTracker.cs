@@ -50,8 +50,9 @@
 
         private void ActiveWindowTitleChanged_NewEvent(object sender, Window newWindow)
         {
-            if (!this.TrackedWindow.Title.Equals(newWindow.Title))
+            if (this.TrackedWindow != null && !this.TrackedWindow.Title.Equals(newWindow.Title))
             {
+                this.TrackedWindow = newWindow;
                 this.FireNewWindowStateEvent();
             }
         }

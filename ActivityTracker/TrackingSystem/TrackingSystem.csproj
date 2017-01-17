@@ -49,11 +49,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Activity.cs" />
+    <Compile Include="Database\ActivityContext.cs" />
+    <Compile Include="Database\ActivityStorage.cs" />
+    <Compile Include="Migrations\201701162321002_InitializeStorage.cs" />
+    <Compile Include="Migrations\201701162321002_InitializeStorage.Designer.cs">
+      <DependentUpon>201701162321002_InitializeStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tracking\ActivityTracker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701162321002_InitializeStorage.resx">
+      <DependentUpon>201701162321002_InitializeStorage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WindowTracker\WindowTracker.csproj">
+      <Project>{76fdf617-a2cc-4746-ba8c-8e5199244826}</Project>
+      <Name>WindowTracker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -30,6 +30,15 @@
             }
         }
 
+        public void RemoveAll()
+        {
+            using (var context = new ActivityContext())
+            {
+                context.Activities.RemoveRange(context.Activities);
+                context.SaveChanges();
+            }
+        }
+
         #endregion
     }
 }

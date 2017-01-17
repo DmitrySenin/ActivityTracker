@@ -20,6 +20,9 @@
         {
             this.InitializeComponent();
 
+            // Reporary solution for test purposes
+            // new ActivityStorage().RemoveAll();
+
             this.Tracker = new ActivityTracker();
             this.Tracker.StartTracking();
         }

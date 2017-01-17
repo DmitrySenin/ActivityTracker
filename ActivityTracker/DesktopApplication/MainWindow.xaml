@@ -8,10 +8,11 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="147*"/>
-            <ColumnDefinition Width="370*"/>
+            <ColumnDefinition Width="163*"/>
+            <ColumnDefinition Width="354*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="ActivityLog" HorizontalAlignment="Left" Height="299" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="497" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="ActivityLog" HorizontalAlignment="Left" Height="258" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="497" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto"/>
+        <Button x:Name="ShowDb" Content="ShowDB" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,289,0,0" Click="ShowDb_OnClick"/>
 
     </Grid>
 </Window>

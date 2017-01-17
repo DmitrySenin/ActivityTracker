@@ -1,10 +1,11 @@
 ﻿namespace DesktopApplication
 {
     using System;
+    using System.Collections.Generic;
     using System.Windows;
 
-    using WindowTracker.Trackers;
-    using WindowTracker.WindowsOS;
+    using TrackingSystem.Database;
+    using TrackingSystem.Tracking;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -13,23 +14,17 @@
     {
         #region Constructos
 
-        private IWindowStateTracker Tracker { get; set; }
+        private ActivityTracker Tracker { get; set; }
 
         public MainWindow()
         {
             this.InitializeComponent();
 
-            this.Tracker = new ActiveWindowStateTracker();
-            this.Tracker.WindowStateChanged += this.Tracker_WindowStateChanged;
-            this.Tracker.StartTracking();
-        }
+            // Reporary solution for test purposes
+            // new ActivityStorage().RemoveAll();
 
-        private void Tracker_WindowStateChanged(object sender, WindowTracker.Common.WindowStateChangedEventArgs e)
-        {
-            this.ActivityLog.AppendText("=============================================" + Environment.NewLine);
-            this.ActivityLog.AppendText("Title: " + e.Title + Environment.NewLine);
-            this.ActivityLog.AppendText("ProcessName: " + e.ProcessName + Environment.NewLine);
-            this.ActivityLog.AppendText("=============================================" + Environment.NewLine);
+            this.Tracker = new ActivityTracker();
+            this.Tracker.StartTracking();
         }
 
         protected override void OnClosed(EventArgs e)
@@ -38,5 +33,24 @@
         }
 
         #endregion
+
+        private void ShowDb_OnClick(object sender, RoutedEventArgs e)
+        {
+            var storage = new ActivityStorage();
+            IList<Activity> activities = storage.GetActivities();
+
+            this.ActivityLog.Clear();
+
+            foreach (var activity in activities)
+            {
+                this.ActivityLog.AppendText("==========================================" + Environment.NewLine);
+                this.ActivityLog.AppendText("Id:" + activity.Id + Environment.NewLine);
+                this.ActivityLog.AppendText("ProcessName:" + activity.ProcessName + Environment.NewLine);
+                this.ActivityLog.AppendText("WindowTitle:" + activity.WindowTitle + Environment.NewLine);
+                this.ActivityLog.AppendText("StartDate:" + activity.StartDate + Environment.NewLine);
+                this.ActivityLog.AppendText("EndDate:" + activity.EndDate + Environment.NewLine);
+                this.ActivityLog.AppendText("==========================================" + Environment.NewLine);
+            }
+        }
     }
 }

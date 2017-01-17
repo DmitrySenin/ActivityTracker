@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowTracker", "WindowTrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopApplication", "DesktopApplication\DesktopApplication.csproj", "{FF53DD1E-827B-419F-907E-5BDEE03D0CEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingSystem", "TrackingSystem\TrackingSystem.csproj", "{A2897F79-9070-4665-922F-C8AC26448B92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FF53DD1E-827B-419F-907E-5BDEE03D0CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF53DD1E-827B-419F-907E-5BDEE03D0CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF53DD1E-827B-419F-907E-5BDEE03D0CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2897F79-9070-4665-922F-C8AC26448B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2897F79-9070-4665-922F-C8AC26448B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2897F79-9070-4665-922F-C8AC26448B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2897F79-9070-4665-922F-C8AC26448B92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
